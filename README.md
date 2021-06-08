@@ -12,7 +12,7 @@
 **Результаты двух ChIP-seq экспериментов**: ENCFF851PCG и ENCFF680AKW
 
 
-### Скачивание файлов и приведение к нужной версии генома (h19)
+## Скачивание файлов и приведение к нужной версии генома (h19)
 
 wget https://www.encodeproject.org/files/ENCFF851PCG/@@download/ENCFF851PCG.bed.gz
 
@@ -29,7 +29,17 @@ wget https://hgdownload.cse.ucsc.edu/goldenpath/hg38/liftOver/hg38ToHg19.over.ch
 
 **liftOver** H3K27me3_ENCFF680AKW.hg38.bed hg38ToHg19.over.chain.gz H3K27me3_ENCFF680AKW.hg19.bed H3K27me3_ENCFF680AKW.hg19.unmapped.bed 
 
+## Построение гистограмм длин участков для всех файлов
 
+(см файл lib.r в папке src)
+
+### Гистограмма распределения длин участков H3K27me3_H9.ENCFF851PCG.hg38 
+
+![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/original_len_histH3K27me3_H9.ENCFF851PCG.hg38.pdf)
+
+### Гистограмма распределения длин участков H3K27me3_H9.ENCFF851PCG.hg19
+
+![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/original_len_histH3K27me3_H9.ENCFF851PCG.hg19.pdf)
 ### **UCSC Genome Browser**: https://genome.ucsc.edu/s/tanshevelci/hse21_H3K27me3_G4_human_UCSC 
 
 ## Pie-chart: Location of Chip-seq peaks
