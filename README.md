@@ -1,5 +1,46 @@
 # hse21_H3K27me3_G4_human.
-UCSC Genome Browser: https://genome.ucsc.edu/s/tanshevelci/hse21_H3K27me3_G4_human_UCSC 
+
+Цель работы - поиск и изучение участков генома, где
+определенная гистоновая метка присутствует в местах образования вторичной структуры ДНК - квадруплекса - G4.
+
+**Организм** - человек
+
+**Гистоновая метка** - H3K27me3
+
+**Тип клеток** - H9
+
+**Результаты двух ChIP-seq экспериментов**: ENCFF851PCG и ENCFF680AKW
+
+
+## Скачивание файлов и приведение к нужной версии генома (h19)
+
+wget https://www.encodeproject.org/files/ENCFF851PCG/@@download/ENCFF851PCG.bed.gz
+
+wget https://www.encodeproject.org/files/ENCFF680AKW/@@download/ENCFF680AKW.bed.gz
+
+zcat ENCFF851PCG.bed.gz |  cut -f1-5 > H3K27me3_ENCFF851PCG.hg38.bed
+
+zcat ENCFF680AKW.bed.gz|  cut -f1-5 > H3K27me3_ENCFF680AKW.hg38.bed
+
+wget https://hgdownload.cse.ucsc.edu/goldenpath/hg38/liftOver/hg38ToHg19.over.chain.gz
+
+
+**liftOver** H3K27me3_ENCFF851PCG.hg38.bed hg38ToHg19.over.chain.gz H3K27me3_ENCFF851PCG.hg19.bed H3K27me3_ENCFF851PCG.hg19.unmapped.bed 
+
+**liftOver** H3K27me3_ENCFF680AKW.hg38.bed hg38ToHg19.over.chain.gz H3K27me3_ENCFF680AKW.hg19.bed H3K27me3_ENCFF680AKW.hg19.unmapped.bed 
+
+## Построение гистограмм длин участков для всех файлов
+
+(см файл lib.r в папке src)
+
+### Гистограмма распределения длин участков H3K27me3_H9.ENCFF851PCG.hg38 
+
+![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/original_len_histH3K27me3_H9.ENCFF851PCG.hg38.pdf)
+
+### Гистограмма распределения длин участков H3K27me3_H9.ENCFF851PCG.hg19
+
+![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/original_len_histH3K27me3_H9.ENCFF851PCG.hg19.pdf)
+### **UCSC Genome Browser**: https://genome.ucsc.edu/s/tanshevelci/hse21_H3K27me3_G4_human_UCSC 
 
 ## Pie-chart: Location of Chip-seq peaks
 ### ENCFF680AKW (20460 peaks) and ENCFF851PCG (14794 peaks)
