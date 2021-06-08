@@ -12,6 +12,17 @@
 **Результаты двух ChIP-seq экспериментов**: ENCFF851PCG и ENCFF680AKW
 
 
+### Скачивание файлов и приведение к нужной версии генома (h19)
+
+wget https://www.encodeproject.org/files/ENCFF851PCG/@@download/ENCFF851PCG.bed.gz
+wget https://www.encodeproject.org/files/ENCFF680AKW/@@download/ENCFF680AKW.bed.gz
+
+zcat ENCFF851PCG.bed.gz |  cut -f1-5 > H3K27me3_ENCFF851PCG.hg38.bed
+zcat ENCFF680AKW.bed.gz|  cut -f1-5 > H3K27me3_ENCFF680AKW.hg38.bed
+
+liftOver H3K27me3_ENCFF851PCG.hg38.bed hg38ToHg19.over.chain.gz H3K27me3_ENCFF851PCG.hg19.bed H3K27me3_ENCFF851PCG.hg19.unmapped.bed 
+
+liftOver H3K27me3_ENCFF680AKW.hg38.bed hg38ToHg19.over.chain.gz H3K27me3_ENCFF680AKW.hg19.bed H3K27me3_ENCFF680AKW.hg19.unmapped.bed 
 
 
 ### **UCSC Genome Browser**: https://genome.ucsc.edu/s/tanshevelci/hse21_H3K27me3_G4_human_UCSC 
