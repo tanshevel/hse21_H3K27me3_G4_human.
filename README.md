@@ -1,4 +1,6 @@
 # hse21_H3K27me3_G4_human.
+## UCSC Genome Browser: 
+https://genome.ucsc.edu/s/tanshevelci/hse21_H3K27me3_G4_human_UCSC 
 
 ## Pie-chart: Location of Chip-seq peaks
 ### ENCFF680AKW and ENCFF851PCG
