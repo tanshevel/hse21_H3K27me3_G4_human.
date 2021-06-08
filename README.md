@@ -1,5 +1,7 @@
 # hse21_H3K27me3_G4_human.
 
+### **UCSC Genome Browser**: https://genome.ucsc.edu/s/tanshevelci/hse21_H3K27me3_G4_human_UCSC 
+
 Цель работы - поиск и изучение участков генома, где
 определенная гистоновая метка присутствует в местах образования вторичной структуры ДНК - квадруплекса - G4.
 
@@ -62,10 +64,6 @@ wget https://hgdownload.cse.ucsc.edu/goldenpath/hg38/liftOver/hg38ToHg19.over.ch
 ![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/filtr_len_hist.H3K27me3_H9.ENCFF680AKW.hg19.filtered.pdf)
 
 Файлы полученные после фильтрации находятся в папке data (файлы с описанием filter_peaks R was added)
-
-## Расположение пиков гистоновой метки относительно аннотированных генов
-
-### **UCSC Genome Browser**: https://genome.ucsc.edu/s/tanshevelci/hse21_H3K27me3_G4_human_UCSC 
 
 ## Pie-chart: Location of Chip-seq peaks
 ### ENCFF680AKW (20460 peaks) and ENCFF851PCG (14794 peaks)
