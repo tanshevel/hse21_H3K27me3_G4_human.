@@ -1,4 +1,13 @@
 # hse21_H3K27me3_G4_human.
+
+Цель работы - поиск и изучение участков генома, где
+определенная гистоновая метка присутствует в местах образования вторичной структуры ДНК - квадруплекса - G4.
+
+Организм - человек
+Гистоновая метка - H3K27me3
+Тип клеток: H9
+Результаты двух ChIP-seq экспериментов: ENCFF851PCG и ENCFF680AKW
+
 UCSC Genome Browser: https://genome.ucsc.edu/s/tanshevelci/hse21_H3K27me3_G4_human_UCSC 
 
 ## Pie-chart: Location of Chip-seq peaks
