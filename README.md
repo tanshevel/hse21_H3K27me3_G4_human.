@@ -66,6 +66,7 @@ wget https://hgdownload.cse.ucsc.edu/goldenpath/hg38/liftOver/hg38ToHg19.over.ch
 
 Файлы полученные после фильтрации находятся в папке data (файлы с описанием filter_peaks R was added)
 
+
 ## Pie-chart: Location of Chip-seq peaks
 
 (см файл cheepseeker.r в папке src)
@@ -82,6 +83,10 @@ wget https://hgdownload.cse.ucsc.edu/goldenpath/hg38/liftOver/hg38ToHg19.over.ch
 #### Объединение наборов ChIP-seq пиков
 
 cat  *.filtered.bed  |   sort -k1,1 -k2,2n   |   bedtools merge   >  H3K27me3_ENCF.merge.hg19.bed 
+
+### Гистограмма распредления объединения пиков
+
+ДОБАВИТЬ
 
 ##  Анализ участков вторичной структуры ДНК
 
