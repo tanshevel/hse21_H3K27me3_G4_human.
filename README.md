@@ -31,10 +31,6 @@ wget https://hgdownload.cse.ucsc.edu/goldenpath/hg38/liftOver/hg38ToHg19.over.ch
 
 **liftOver** H3K27me3_ENCFF680AKW.hg38.bed hg38ToHg19.over.chain.gz H3K27me3_ENCFF680AKW.hg19.bed H3K27me3_ENCFF680AKW.hg19.unmapped.bed 
 
-## Анализ пересечений гистоновой метки и стр-ры ДНК
-
-
-
 
 ## Построение гистограмм длин участков для всех файлов
 
@@ -79,10 +75,6 @@ wget https://hgdownload.cse.ucsc.edu/goldenpath/hg38/liftOver/hg38ToHg19.over.ch
 
 Много участков находятся в промотерах.
 
-### Pie-chart: Intersect with G4 (46803 peaks)
-![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/chip_seeker.!H3K27me3.intersect_with_G4.plotAnnoPie.png)
-
-
 ## После этого данные были визуализированны в UCSC Genome Browser
 
 ![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/Screen%20Shot%202021-06-07%20at%2010.36.34.png)
@@ -106,4 +98,41 @@ sort -k1,1 -k2,2n G4.bed | bedtools merge > G4_ALLLL.bed
 ### Pie-chart: G4.bed (1285463 peaks)  ((DNA secondary structure))
 ![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/chip_seeker.G4_ALLLL.plotAnnoPie.png)
 
-Много участков находятся в местах с неизвестной функцией.
+Много участков находятся в Distal Intergenic: местах с неизвестной функцией.
+
+## Анализ пересечений гистоновой метки и стр-ры ДНК
+
+bedtools intersect  -a G4_ALLLL.bed   -b  H3K4me3_ENCF.merge.hg19.bed  >  H3K4me3_ENCF.intersect_with_G4.bed
+
+### Гистограмма распределений длин пересечений
+
+![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/my_len_hist.!H3K27me3.intersect_with_G4.png)
+
+### Pie-chart: Intersect with G4 (46803 peaks)
+
+![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/chip_seeker.!H3K27me3.intersect_with_G4.plotAnnoPie.png)
+
+### Визуализация в геномном браузере исходных участков стр-ры ДНК, а также их пересечений с гистоновой меткой
+
+https://genome.ucsc.edu/s/tanshevelci/hse21_H3K27me3_G4_human_UCSC 
+
+### Пересечения между гистоновой меткой и стр-рой ДНК
+
+![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/Screen%20Shot%202021-06-09%20at%2011.39.18.png)
+
+Пересечений несколько. Например, пересечения на геномных координатах: chr10:550863-551057 chr10:552293-552427 chr10:553608-553757 chr10:555618-555812 и других.
+
+### Ассоциируем полученные пересечения с ближайшими генами
+
+(см код chipPeakAnno.R в папке src)
+
+
+Участков - пересечений 54114 по всему геному.
+
+23065 транскриптов. 
+
+В итоге получили 13189 пиков, которые удалось проассоциировать с генами.
+
+Уникальных генов 3253.
+
+
