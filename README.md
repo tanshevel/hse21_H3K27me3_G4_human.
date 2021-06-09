@@ -72,12 +72,30 @@ wget https://hgdownload.cse.ucsc.edu/goldenpath/hg38/liftOver/hg38ToHg19.over.ch
 ### ENCFF680AKW (20460 peaks) and ENCFF851PCG (14794 peaks)
 ![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/chip_seeker.H3K27me3_H9.ENCFF680AKW.hg19filtered.plotAnnoPie.png)![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/chip_seeker.H3K27me3_H9.ENCFF851PCG.hg19filtered.plotAnnoPie.png)
 
-## Pie-chart: G4.bed (1285463 peaks)  ((DNA secondary structure))
-![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/chip_seeker.G4_ALLLL.plotAnnoPie.png)
 
-## Pie-chart: Intersect with G4 (46803 peaks)
+### Pie-chart: Intersect with G4 (46803 peaks)
 ![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/chip_seeker.!H3K27me3.intersect_with_G4.plotAnnoPie.png)
 
-Объединение наборов ChIP-seq пиков
+
+## После этого данные были визуализированны в UCSC Genome Browser
+
+![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/Screen%20Shot%202021-06-07%20at%2010.36.34.png)
+
+#### Объединение наборов ChIP-seq пиков
 
 cat  *.filtered.bed  |   sort -k1,1 -k2,2n   |   bedtools merge   >  H3K27me3_ENCF.merge.hg19.bed 
+
+##  Анализ участков вторичной структуры ДНК
+
+Были скачаны 2 файла формата .bed: G4_seq_Li_KPDS
+
+cat Homo_all_w15_th-1_minus.hits.max.PDS.w50.35.bed Homo_all_w15_th-1_plus.hits.max.PDS.w50.35.bed  > G4.bed
+
+sort -k1,1 -k2,2n G4.bed | bedtools merge > G4_ALLLL.bed
+
+### Гистограмма распредления длин участков вторичной структуры ДНК 
+
+![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/my_len_hist.G4_ALLLL.png)
+
+### Pie-chart: G4.bed (1285463 peaks)  ((DNA secondary structure))
+![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/chip_seeker.G4_ALLLL.plotAnnoPie.png)
