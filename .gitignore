@@ -1,3 +1,5 @@
 
 .DS_Store
 data/H3K27me3.intersect_with_G4.bed
+data/H3K27me3_HepG2.ENCFF609FME.h19.bed.filtered.bed
+data/H3K27me3_HepG2.ENCFF042EDV.h19.bed.filtered.bed
