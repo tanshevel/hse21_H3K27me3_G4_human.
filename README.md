@@ -31,6 +31,11 @@ wget https://hgdownload.cse.ucsc.edu/goldenpath/hg38/liftOver/hg38ToHg19.over.ch
 
 **liftOver** H3K27me3_ENCFF680AKW.hg38.bed hg38ToHg19.over.chain.gz H3K27me3_ENCFF680AKW.hg19.bed H3K27me3_ENCFF680AKW.hg19.unmapped.bed 
 
+## Анализ пересечений гистоновой метки и стр-ры ДНК
+
+
+
+
 ## Построение гистограмм длин участков для всех файлов
 
 (см файл lib.r в папке src)
@@ -72,6 +77,7 @@ wget https://hgdownload.cse.ucsc.edu/goldenpath/hg38/liftOver/hg38ToHg19.over.ch
 ### ENCFF680AKW (20460 peaks) and ENCFF851PCG (14794 peaks)
 ![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/chip_seeker.H3K27me3_H9.ENCFF680AKW.hg19filtered.plotAnnoPie.png)![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/chip_seeker.H3K27me3_H9.ENCFF851PCG.hg19filtered.plotAnnoPie.png)
 
+Много участков находятся в промотерах.
 
 ### Pie-chart: Intersect with G4 (46803 peaks)
 ![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/chip_seeker.!H3K27me3.intersect_with_G4.plotAnnoPie.png)
@@ -99,3 +105,5 @@ sort -k1,1 -k2,2n G4.bed | bedtools merge > G4_ALLLL.bed
 
 ### Pie-chart: G4.bed (1285463 peaks)  ((DNA secondary structure))
 ![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/chip_seeker.G4_ALLLL.plotAnnoPie.png)
+
+Много участков находятся в местах с неизвестной функцией.
