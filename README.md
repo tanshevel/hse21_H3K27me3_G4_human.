@@ -144,12 +144,12 @@ https://genome.ucsc.edu/s/tanshevelci/hse21_H3K27me3_G4_human_UCSC
 
  Например, гены (значимо) участвуют в функциях: 
  
- 1) gene silencing by RNA
- 2) regulation of muscle tissue development
- 3) renal system process (почечная система)
- 4) detection of abiotic stimulus
- 5) long-term synaptic potentiation
- 6) cellular response to zinc ion
+ 1) anatomical structure development
+ 2) multicellular organism development
+ 3) system development
+ 4) developmental process
+ 5) multicellular organismal process
+ 6) nervous system development
  Полный список в папке data "analysis.txt"
  
  
