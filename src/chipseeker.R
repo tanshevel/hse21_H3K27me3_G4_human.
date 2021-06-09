@@ -21,10 +21,11 @@ library(clusterProfiler)
 
 ###
 
-#NAME <- 'H3K4me3_A549.intersect_with_DeepZ'
-#NAME <- 'DeepZ'
-NAME <- 'H3K27me3_H9.ENCFF680AKW.hg19filtered'
+#NAME <- '!H3K27me3.intersect_with_G4'
+#NAME <- 'G4_ALLLL'
+#NAME <- 'H3K27me3_H9.ENCFF680AKW.hg19filtered'
 #NAME <- 'H3K27me3_H9.ENCFF851PCG.hg19filtered'
+
 BED_FN <- paste0(DATA_DIR, NAME, '.bed')
 
 ###
