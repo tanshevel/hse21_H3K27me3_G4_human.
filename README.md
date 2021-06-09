@@ -86,7 +86,7 @@ cat  *.filtered.bed  |   sort -k1,1 -k2,2n   |   bedtools merge   >  H3K27me3_EN
 
 ### Гистограмма распредления объединения пиков
 
-ДОБАВИТЬ
+![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/my_len_hist.H3K27me3_ENCFF.png)
 
 ##  Анализ участков вторичной структуры ДНК
 
