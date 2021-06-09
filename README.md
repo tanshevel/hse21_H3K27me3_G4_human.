@@ -81,3 +81,8 @@ wget https://hgdownload.cse.ucsc.edu/goldenpath/hg38/liftOver/hg38ToHg19.over.ch
 Объединение наборов ChIP-seq пиков
 
 cat  *.filtered.bed  |   sort -k1,1 -k2,2n   |   bedtools merge   >  H3K27me3_ENCF.merge.hg19.bed 
+
+
+После этого данные были визуализированны в UCSC Genome Browser
+
+![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/Screen%20Shot%202021-06-07%20at%2010.36.34.png)
