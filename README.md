@@ -1,5 +1,7 @@
 # hse21_H3K27me3_G4_human.
 
+### **UCSC Genome Browser**: https://genome.ucsc.edu/s/tanshevelci/hse21_H3K27me3_G4_human_UCSC 
+
 Цель работы - поиск и изучение участков генома, где
 определенная гистоновая метка присутствует в местах образования вторичной структуры ДНК - квадруплекса - G4.
 
@@ -39,10 +41,34 @@ wget https://hgdownload.cse.ucsc.edu/goldenpath/hg38/liftOver/hg38ToHg19.over.ch
 
 ### Гистограмма распределения длин участков H3K27me3_H9.ENCFF851PCG.hg19
 
-![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/original_len_histH3K27me3_H9.ENCFF851PCG.hg19.pdf)
-### **UCSC Genome Browser**: https://genome.ucsc.edu/s/tanshevelci/hse21_H3K27me3_G4_human_UCSC 
+![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/my_len_hist.H3K27me3_H9.ENCFF851PCG.hg38.png)
+
+Осуществляем фильтрацию. Сначала ольтфильтровала участки длиной до 20000, но потом при рассмотрении решила отфильтровать также до 10000, так как увидела еще единичные участки с такой длиной.
+
+### Гистограмма распределения длин участков H3K27me3_H9.ENCFF851PCG.hg19 после фильтрации
+
+![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/filtr_len_hist.H3K27me3_H9.ENCFF851PCG.hg19.filtered.pdf)
+
+### Гистограмма распределения длин участков H3K27me3_H9.ENCFF680AKW.hg38
+
+![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/my_len_hist.H3K27me3_H9.ENCFF680AKW.hg38.png)
+
+### Гистограмма распределения длин участков H3K27me3_H9.ENCFF680AKW.hg19
+
+![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/my_len_hist.H3K27me3_H9.ENCFF680AKW.hg19.png)
+
+Осуществляем фильтрацию. Сначала ольтфильтровала участки длиной до 20000, но потом при рассмотрении решила отфильтровать также до 5000, так как увидела еще единичные участки с такой длиной.
+
+### Гистограмма распределения длин участков H3K27me3_H9.ENCFF680AKW.hg19 после фильтрации
+
+![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/filtr_len_hist.H3K27me3_H9.ENCFF680AKW.hg19.filtered.pdf)
+
+Файлы полученные после фильтрации находятся в папке data (файлы с описанием filter_peaks R was added)
 
 ## Pie-chart: Location of Chip-seq peaks
+
+(см файл cheepseeker.r в папке src)
+
 ### ENCFF680AKW (20460 peaks) and ENCFF851PCG (14794 peaks)
 ![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/chip_seeker.H3K27me3_H9.ENCFF680AKW.hg19filtered.plotAnnoPie.png)![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/chip_seeker.H3K27me3_H9.ENCFF851PCG.hg19filtered.plotAnnoPie.png)
 
@@ -51,3 +77,7 @@ wget https://hgdownload.cse.ucsc.edu/goldenpath/hg38/liftOver/hg38ToHg19.over.ch
 
 ## Pie-chart: Intersect with G4 (46803 peaks)
 ![Alt text](https://github.com/tanshevel/hse21_H3K27me3_G4_human./blob/main/images/chip_seeker.!H3K27me3.intersect_with_G4.plotAnnoPie.png)
+
+Объединение наборов ChIP-seq пиков
+
+cat  *.filtered.bed  |   sort -k1,1 -k2,2n   |   bedtools merge   >  H3K27me3_ENCF.merge.hg19.bed 
