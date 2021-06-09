@@ -150,6 +150,8 @@ https://genome.ucsc.edu/s/tanshevelci/hse21_H3K27me3_G4_human_UCSC
  4) developmental process
  5) multicellular organismal process
  6) nervous system development
+
+
  Полный список в папке data "analysis.txt"
  
  
